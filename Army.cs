@@ -32,18 +32,12 @@ namespace War
 
         public void UpdateSoldiersList()
         {
-            List<Soldier> soldiers = new List<Soldier>();
-
-            foreach(Soldier soldier in _soldiers)
+            for (int i = 0; i < _soldiers.Count; i++)
             {
-                soldiers.Add(soldier);
-            }
-
-            foreach(Soldier soldier in soldiers)
-            {
-                if (soldier.IsAlive == false)
+                if (_soldiers[i].IsAlive == false)
                 {
-                    _soldiers.Remove(soldier);
+                    _soldiers.Remove(_soldiers[i]);
+                    i--;
                 }
             }
         }
@@ -55,8 +49,8 @@ namespace War
 
         private void InitializeSoldiers()
         {
-            int minSoldiersCount = 10;
-            int maxSoldiersCount = 20;
+            int minSoldiersCount = 5;
+            int maxSoldiersCount = 10;
             int soldiersCount = _random.Next(minSoldiersCount, maxSoldiersCount);
 
             _soldiers = new List<Soldier>();

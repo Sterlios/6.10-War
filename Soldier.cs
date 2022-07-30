@@ -51,7 +51,7 @@ namespace War
 
         public override string ToString()
         {
-            return "Солдат " + _id + "(HP: " + Health + ")";
+            return "Солдат " + _id + " (HP: " + Health + ")";
         }
     }
 }
